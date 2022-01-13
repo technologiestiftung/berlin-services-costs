@@ -1,0 +1,30 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  place-content: space-between;
+}
+
+header,
+footer {
+  background-color: #e40422;
+}
+
+.content a {
+  color: #e40422 !important;
+}
+
+.content a:hover,
+.content a:focus,
+.content a:active {
+  color: #a10318 !important;
+}
+
+.content a:visited {
+  color: inherit !important;
+}
+
+form input[type="submit"] {
+  background-color: #e40422;
+  border-color: transparent;
+}

@@ -1,0 +1,22 @@
+title: Leistungen und Ausgaben der Berliner Senatsverwaltungen
+description: Erster Prototyp, der einige Leistungen und Ausgaben der Berliner Senatsverwaltungen über Datasette verfügbar macht
+license: CC BY-SA 4.0
+license_url: https://creativecommons.org/licenses/by-sa/4.0/
+extra_css_urls:
+  - /static/index.css
+databases:
+  berlin_services:
+    tables:
+      wohngeld_mengen:
+        description: Beschreibung dieses Tables
+        columns:
+          Jahr: Jahr der Datenerfassung
+          Vollbeschaeftigteneinheit: Beschreibung, was diese Column bedeutet
+          Beschiedene_Wohngeldantraege: Beschreibung, was diese Column bedeutet
+          Bescheide_je_Vollbeschaeftigteneinheit: Beschreibung, was diese Column bedeutet
+          Anteil_am_Basisjahr2004_in_Prozent: Beschreibung, was diese Column bedeutet
+          Veraenderung_zum_Basisjahr2004_in_Prozent: Beschreibung, was diese Column bedeutet
+        facets:
+          - Jahr
+          - Vollbeschaeftigteneinheit
+
