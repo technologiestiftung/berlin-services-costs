@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+{% set rows = sql("select * from wohngeld_mengen") %}
+{% if not rows %}
+    {{ raise_404("No data found") }}
+{% endif %}
+
+<h2>Beschiedene Wohngeldanträge</h2>
+<dl>
+  {% for row in rows %}
+  <dt style="font-weight: bold; margin-top: 1rem;">{{ row['Jahr'] }}</dt>
+  <dd>{{ row['Beschiedene_Wohngeldantraege'] }}</dd>
+  {% endfor %}
+</dl>
+
+{% endblock %}
