@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% block title %}{% endblock %}</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="{{ urls.static('app.css') }}?{{ app_css_hash }}">
+
+  {% for url in extra_css_urls %}
+  <link rel="stylesheet" href="{{ url.url }}"{% if url.sri %} integrity="{{ url.sri }}" crossorigin="anonymous"{% endif %}>
+  {% endfor %}
+
+  {% for url in extra_js_urls %}
+  <script {% if url.module %}type="module" {% endif %}src="{{ url.url }}"{% if url.sri %} integrity="{{ url.sri }}" crossorigin="anonymous"{% endif %}></script>
+  {% endfor %}
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %} custom c">
+  <div class="not-footer">
+
+    {% include "_header.html" %}
+
+    <div style="padding: 1rem 1rem 0;">
+      {% block nav %}
+      {% endblock nav %}
+    </div>
+
+    {% block messages %}
+    {% if show_messages %}
+      {% for message, message_type in show_messages() %}
+        <p class="message-{% if message_type == 1 %}info{% elif message_type == 2 %}warning{% elif message_type == 3 %}error{% endif %}">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+    {% endblock %}
+
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main> 
+
+  </div>
+
+  <footer class="ft">
+    {% block footer %}{% include "_footer.html" %}{% endblock %}
+  </footer>
+
+  {% include "_close_open_menus.html" %}
+
+  {% for body_script in body_scripts %}
+  <script{% if body_script.module %} type="module"{% endif %}>{{ body_script.script }}</script>
+  {% endfor %}
+
+  {% if select_templates %}
+  <!-- Templates considered: {{ select_templates|join(", ") }} -->
+  {% endif %}
+  
+</body>
+</html>

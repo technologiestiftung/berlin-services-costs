@@ -1,30 +1,102 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #14141b;
+
+  --size-px: 1px;
+  --size-1: 4px;
+  --size-2: 8px;
+  --size-3: 12px;
+  --size-4: 16px;
+}
+
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   place-content: space-between;
+  font-family: sans-serif;
 }
 
-header,
-footer {
-  background-color: #e40422;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.content a {
-  color: #e40422 !important;
+h1 {
+  word-wrap: break-word;
 }
 
-.content a:hover,
-.content a:focus,
-.content a:active {
-  color: #a10318 !important;
+/*
+  HEADER
+*/
+.c header {
+  background-color: var(--color-white);
+  padding: var(--size-4);
+  display: flex;
+  gap: var(--size-2);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: var(--size-px) solid var(--color-black);
 }
 
-.content a:visited {
-  color: inherit !important;
+/*
+  MAIN NAV
+*/
+nav[aria-label="Hauptmenü"] ul {
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-4);
+}
+
+/*
+  MAIN CONTENT AREA
+*/
+main {
+  padding: 0 var(--size-4);
+}
+
+.custom footer {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.custom h1 {
+  margin: 0;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+.c a {
+  color: var(--color-black) !important;
+  text-decoration: none;
+  border-bottom: var(--size-px) solid var(--color-black);
+  transition: color 0.15s ease-in-out;
+}
+
+.custom a:hover,
+.custom a:focus,
+.custom a:active {
+  color: #ff0000 !important;
 }
 
 form input[type="submit"] {
   background-color: #e40422;
   border-color: transparent;
+}
+
+.custom p {
+  margin: 0 !important;
+}
+
+.custom .crumbs {
+  text-transform: uppercase;
+  font-size: smaller;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+}
+.custom .crumbs a {
+  padding: 0.2rem;
+  text-decoration: none !important;
+  border: 1px solid red;
 }
