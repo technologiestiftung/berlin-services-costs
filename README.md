@@ -14,7 +14,7 @@
 See [docs](https://docs.datasette.io/en/stable/settings.html#configuration-directory-mode) for details.
 
 ```bash
-datasette datasette/
+datasette datasette/ --reload
 ```
 
 ## Insert new CSVs/tables into the database
@@ -38,3 +38,4 @@ datasette publish vercel berlin_services.db --project=berlin-services-costs -m m
 - [ ] figure out templating and CSS
 - [x] Deployment
 - [ ] Better charting
+- [ ] figure out CORS
