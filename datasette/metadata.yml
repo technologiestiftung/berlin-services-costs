@@ -1,5 +1,5 @@
-title: Leistungen und Ausgaben der Berliner Senatsverwaltungen
-description: Erster Prototyp, der einige Leistungen und Ausgaben der Berliner Senatsverwaltungen über Datasette verfügbar macht
+title: Was wir tun & dafür augeben
+description: Die Berliner Senatsverwaltungen stellen hier Daten zu ihren Leistungen und Ausgaben vor und machen sie als Open Data verfügbar.
 license: CC BY-SA 4.0
 license_url: https://creativecommons.org/licenses/by-sa/4.0/
 extra_css_urls:
